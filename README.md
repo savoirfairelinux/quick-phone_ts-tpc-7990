@@ -9,11 +9,14 @@ This is done in Docker/CQFD environment using Yocto.
 ## Build Instructions
 
 First run:
-@> ./.cqfd/cqfd init
+
+`@> ./.cqfd/cqfd init`
+
 This will create the Docker container for the Yocto build
 
 Then run:
-make
+
+`make`
 
 ## Dependencies
 
