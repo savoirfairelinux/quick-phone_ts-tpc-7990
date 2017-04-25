@@ -16,23 +16,23 @@ require recipes-qt/qt5/qt5.inc
 
 do_install() {
        install -d ${D}${datadir}/${P}
-       install -m 0755 ${B}/doorbell ${D}${datadir}/${P}
+       install -m 0755 ${B}/quick-phone ${D}${datadir}/${P}
        cp -a  ${S}/content ${D}${datadir}/${P}
        cp -a  ${S}/img ${D}${datadir}/${P}
        cp -a  ${S}/pictures ${D}${datadir}/${P}
        cp -a  ${S}/userList.json ${D}${datadir}/${P}
-       install -m 0644 ${S}/doorbell.qml ${D}${datadir}/${P}
+       install -m 0644 ${S}/quick-phone.qml ${D}${datadir}/${P}
        install -m 0644 ${S}/app.js ${D}${datadir}/${P}
        install -m 0644 ${S}/ringing.wav ${D}${datadir}/${P}
        install -m 0644 ${S}/ts_7990_config.ini ${D}${datadir}/${P}
        install -m 0755 ${S}/caller.py ${D}${datadir}/${P}
 
        install -d ${D}${bindir}
-       echo "#!/bin/sh" > ${D}${bindir}/doorbell
-       echo "export QML_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/doorbell
-       echo "export QML2_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/doorbell
-       echo "cd ${datadir}/${P} && ./doorbell \$* " >> ${D}${bindir}/doorbell
-       chmod +x ${D}${bindir}/doorbell
+       echo "#!/bin/sh" > ${D}${bindir}/quick-phone
+       echo "export QML_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quick-phone
+       echo "export QML2_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quick-phone
+       echo "cd ${datadir}/${P} && ./quick-phone \$* " >> ${D}${bindir}/quick-phone
+       chmod +x ${D}${bindir}/quick-phone
 }
 
 FILES_${PN} += "${datadir}/${P}/*"
