@@ -8,15 +8,10 @@ This is done in Docker/CQFD environment using Yocto.
 
 ## Build Instructions
 
-First run:
+Just run `make`
 
-`@> ./.cqfd/cqfd init`
-
-This will create the Docker container for the Yocto build
-
-Then run:
-
-`make`
+Note that this will take a while the first time. It will first create a docker
+container for the Yocto build and then run the Yocto scripts.
 
 ## Dependencies
 

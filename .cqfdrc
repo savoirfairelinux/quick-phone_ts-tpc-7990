@@ -1,0 +1,9 @@
+[project]
+org='sfl'
+name='quick-phone'
+
+[build]
+command='./build.sh'
+
+files=''
+archive=''
