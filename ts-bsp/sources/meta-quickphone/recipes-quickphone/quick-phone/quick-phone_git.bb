@@ -16,23 +16,23 @@ require recipes-qt/qt5/qt5.inc
 
 do_install() {
        install -d ${D}${datadir}/${P}
-       install -m 0755 ${B}/quick-phone ${D}${datadir}/${P}
+       install -m 0755 ${B}/quickPhone ${D}${datadir}/${P}
        cp -a  ${S}/content ${D}${datadir}/${P}
        cp -a  ${S}/img ${D}${datadir}/${P}
        cp -a  ${S}/pictures ${D}${datadir}/${P}
        cp -a  ${S}/userList.json ${D}${datadir}/${P}
-       install -m 0644 ${S}/quick-phone.qml ${D}${datadir}/${P}
+       install -m 0644 ${S}/quickPhone.qml ${D}${datadir}/${P}
        install -m 0644 ${S}/app.js ${D}${datadir}/${P}
        install -m 0644 ${S}/ringing.wav ${D}${datadir}/${P}
        install -m 0644 ${S}/ts_7990_config.ini ${D}${datadir}/${P}
        install -m 0755 ${S}/caller.py ${D}${datadir}/${P}
 
        install -d ${D}${bindir}
-       echo "#!/bin/sh" > ${D}${bindir}/quick-phone
-       echo "export QML_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quick-phone
-       echo "export QML2_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quick-phone
-       echo "cd ${datadir}/${P} && ./quick-phone \$* " >> ${D}${bindir}/quick-phone
-       chmod +x ${D}${bindir}/quick-phone
+       echo "#!/bin/sh" > ${D}${bindir}/quickPhone
+       echo "export QML_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quickPhone
+       echo "export QML2_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quickPhone
+       echo "cd ${datadir}/${P} && ./quickPhone \$* " >> ${D}${bindir}/quickPhone
+       chmod +x ${D}${bindir}/quickPhone
 }
 
 FILES_${PN} += "${datadir}/${P}/*"

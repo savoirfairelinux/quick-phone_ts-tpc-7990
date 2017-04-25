@@ -5,7 +5,7 @@ do_install_append() {
 	cat <<EOF > ${WORKDIR}/00xDoorbellApp.sh
 #!/bin/sh
 
-exec quick-phone -geometry 1024x600+0+0 -nomouse
+exec quickPhone -geometry 1024x600+0+0 -nomouse
 EOF
 	install -m 0755 ${WORKDIR}/00xDoorbellApp.sh ${D}/${sysconfdir}/X11/Xsession.d/
 }
