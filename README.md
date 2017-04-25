@@ -20,6 +20,15 @@ container for the Yocto build and then run the Yocto scripts.
 (see https://docs.docker.com/engine/installation/linux/fedora/ for ex.)
 3. Lots of patience to build Yocto
 
+## Configuration
+
+Currently the image is configured to get a dynamic address via dhcp,
+you will need to modify this if you wish to use a static address.
+
+See the [quick-phone](https://github.com/savoirfairelinux/quick-phone)
+repo readme to find out how to configure your SIP account and
+populate your contacts.
+
 ## TODOs
 
 * Move meta-quickphone layer and recipes to [meta-sfl](https://github.com/savoirfairelinux/meta-sfl)
