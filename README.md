@@ -19,3 +19,9 @@ container for the Yocto build and then run the Yocto scripts.
 2. $USER belongs to the docker group
 (see https://docs.docker.com/engine/installation/linux/fedora/ for ex.)
 3. Lots of patience to build Yocto
+
+## TODOs
+
+* Move meta-quickphone layer and recipes to [meta-sfl](https://github.com/savoirfairelinux/meta-sfl)
+  to separate build scripts from yocto recipes
+* Improve alsa config so that it works well by default
