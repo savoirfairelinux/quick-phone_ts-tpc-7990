@@ -7,6 +7,10 @@ PR = "r0"
 SRC_URI = "git://github.com/ephelip/quick-phone.git"
 SRCREV = "cadff41fb97f95c60444b251ebfa133e7dcf83ef"
 
+SRC_URI += "\
+	file://quickphone.service \
+"
+
 S = "${WORKDIR}/git"
 
 DEPENDS = "qtdeclarative qtgraphicaleffects pjsip python-argparse qtmultimedia qtquick1 pjsip"
@@ -34,6 +38,9 @@ do_install() {
        echo "export QML2_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quickPhone
        echo "cd ${datadir}/${P} && ./quickPhone \$* " >> ${D}${bindir}/quickPhone
        chmod +x ${D}${bindir}/quickPhone
+
+       install -d ${D}/${sysconfdir}/systemd/network/multi-user.target.wants
+       install -m 0644 ${WORKDIR}/quickphone.service ${D}/${sysconfdir}/systemd/network/multi-user.target.wants/
 }
 
 FILES_${PN} += "${datadir}/${P}/*"

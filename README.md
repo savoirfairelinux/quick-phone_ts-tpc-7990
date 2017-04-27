@@ -35,4 +35,4 @@ populate your contacts.
   to separate build scripts from yocto recipes
 * Improve alsa config so that it works well by default
 * ~~Remove X11, we can run the app in just the framebuffer~~
-* Replace X11 launch script with systemd script
+* ~~Replace X11 launch script with systemd script~~
