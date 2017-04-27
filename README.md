@@ -34,5 +34,5 @@ populate your contacts.
 * Move meta-quickphone layer and recipes to [meta-sfl](https://github.com/savoirfairelinux/meta-sfl)
   to separate build scripts from yocto recipes
 * Improve alsa config so that it works well by default
-* Remove X11, we can run the app in just the framebuffer
+* ~~Remove X11, we can run the app in just the framebuffer~~
 * Replace X11 launch script with systemd script

@@ -60,7 +60,7 @@ PACKAGECONFIG_append_pn-qtbase = " icu accessibility"
 
 # Skip these three if you do not want systemd
 DISTRO_FEATURES_append = " systemd"
-DISTRO_FEATURES_remove = " wayland"
+DISTRO_FEATURES_remove = " wayland x11"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 EOF

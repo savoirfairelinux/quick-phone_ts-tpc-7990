@@ -4,12 +4,12 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
 
 PR = "r0"
 
-SRC_URI = "git://github.com/savoirfairelinux/quick-phone.git"
-SRCREV = "5e633327fb89f04002d573c5c94b030b499d3b9d"
+SRC_URI = "git://github.com/ephelip/quick-phone.git"
+SRCREV = "cadff41fb97f95c60444b251ebfa133e7dcf83ef"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "qtdeclarative qtgraphicaleffects pjsip python-argparse"
+DEPENDS = "qtdeclarative qtgraphicaleffects pjsip python-argparse qtmultimedia qtquick1 pjsip"
 RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins alsa-utils pjsip python-argparse"
 
 require recipes-qt/qt5/qt5.inc
@@ -21,6 +21,7 @@ do_install() {
        cp -a  ${S}/img ${D}${datadir}/${P}
        cp -a  ${S}/pictures ${D}${datadir}/${P}
        cp -a  ${S}/userList.json ${D}${datadir}/${P}
+       install -m 0644 ${S}/intro_video.mp4 ${D}${datadir}/${P}
        install -m 0644 ${S}/quickPhone.qml ${D}${datadir}/${P}
        install -m 0644 ${S}/app.js ${D}${datadir}/${P}
        install -m 0644 ${S}/ringing.wav ${D}${datadir}/${P}
