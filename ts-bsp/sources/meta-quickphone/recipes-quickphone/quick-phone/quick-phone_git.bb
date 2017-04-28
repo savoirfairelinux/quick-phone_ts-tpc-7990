@@ -4,11 +4,12 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
 
 PR = "r0"
 
-SRC_URI = "git://github.com/ephelip/quick-phone.git"
-SRCREV = "cadff41fb97f95c60444b251ebfa133e7dcf83ef"
+SRC_URI = "git://github.com/savoirfairelinux/quick-phone.git"
+SRCREV = "dd8ccdb7dce58b6cc544490c7a67d9d09913cd59"
 
 SRC_URI += "\
 	file://quickphone.service \
+	file://quickPhone \
 "
 
 S = "${WORKDIR}/git"
@@ -33,14 +34,10 @@ do_install() {
        install -m 0755 ${S}/caller.py ${D}${datadir}/${P}
 
        install -d ${D}${bindir}
-       echo "#!/bin/sh" > ${D}${bindir}/quickPhone
-       echo "export QML_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quickPhone
-       echo "export QML2_IMPORT_PATH=${datadir}/${P}" >> ${D}${bindir}/quickPhone
-       echo "cd ${datadir}/${P} && ./quickPhone \$* " >> ${D}${bindir}/quickPhone
-       chmod +x ${D}${bindir}/quickPhone
+       install -m 0755 ${WORKDIR}/quickPhone ${D}${bindir}
 
-       install -d ${D}/${sysconfdir}/systemd/network/multi-user.target.wants
-       install -m 0644 ${WORKDIR}/quickphone.service ${D}/${sysconfdir}/systemd/network/multi-user.target.wants/
+       install -d ${D}/${sysconfdir}/systemd/system/multi-user.target.wants
+       install -m 0644 ${WORKDIR}/quickphone.service ${D}/${sysconfdir}/systemd/system/multi-user.target.wants/
 }
 
 FILES_${PN} += "${datadir}/${P}/*"
