@@ -23,17 +23,20 @@ IMAGE_INSTALL_tsimx6 = "\
 # list of packages that are specific to this image
 IMAGE_INSTALL_append = " \
     packagegroup-core-full-cmdline \
+    packagegroup-fonts-truetype-core \
     packagegroup-qt5-toolchain-target \
     alsa-utils-alsamixer \
     bash-completion \
     fbset \
     fbgrab \
-    fontconfig \
     freetype \
     i2c-tools \
     libmodbus \
     linux-firmware \
     quick-phone \
+    ttf-dejavu-sans-condensed \
+    ttf-dejavu-serif \
+    ttf-dejavu-serif-condensed \
     util-linux-mkfs"
 
 inherit core-image
