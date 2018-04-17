@@ -20,6 +20,7 @@ SRC_URI = "http://www.pjsip.org/release/2.6/pjproject-2.6.tar.bz2"
 S = "${WORKDIR}/pjproject-2.6/"
 
 DEPENDS = "alsa-lib util-linux python-dev"
+RDEPENDS_${PN} += "python-threading"
 
 EXTRA_OECONF += "STAGING_DIR=${STAGING_DIR_NATIVE}"
 export BUILD_SYS
