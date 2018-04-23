@@ -11,7 +11,7 @@ export PATH=$PATH:`pwd`/bin
 cd ts-bsp
 # Fido is the most tested branch for the TS-4900.  We also have a Jethro and Fido branch
 # TS-7970/TS-7990 should use at least Krogoth.
-repo init -u https://github.com/embeddedarm/ts-oe-bsp.git -b fido
+repo init -u https://github.com/embeddedarm/ts-oe-bsp.git -b morty
 repo sync # This will take a while while it downloads around 10 git repos
 
 # Once it is downloaded the environment needs to bet set up:
@@ -21,6 +21,7 @@ repo sync # This will take a while while it downloads around 10 git repos
 # export SDKMACHINE="i686"
 # Generate the image based on quad or solo
 export MACHINE="tsimx6"
+export DISTRO="poky"
 ## The SDK and MACHINE can be changed later by modifying build/conf/local.conf
 echo `pwd`
 source ./setup-environment build
@@ -44,9 +45,9 @@ BBLAYERS = " \
 	${BSPDIR}/sources/meta-openembedded/meta-ruby \
 	${BSPDIR}/sources/meta-openembedded/meta-python \
 	\
-	${BSPDIR}/sources/meta-fsl-arm \
-	${BSPDIR}/sources/meta-fsl-arm-extra \
-	${BSPDIR}/sources/meta-fsl-demos \
+	${BSPDIR}/sources/meta-freescale \
+	${BSPDIR}/sources/meta-freescale-3rdparty \
+	${BSPDIR}/sources/meta-freescale-distro \
 	${BSPDIR}/sources/meta-ts \
 	${BSPDIR}/sources/meta-qt5 \
 	${BSPDIR}/sources/meta-quickphone \
@@ -63,4 +64,6 @@ DISTRO_FEATURES_append = " systemd"
 DISTRO_FEATURES_remove = " wayland x11"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+
+SECURITY_CFLAGS_pn-pjsip = "${SECURITY_NO_PIE_CFLAGS}"
 EOF
