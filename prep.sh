@@ -64,4 +64,6 @@ DISTRO_FEATURES_append = " systemd"
 DISTRO_FEATURES_remove = " wayland x11"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+
+SECURITY_CFLAGS_pn-pjsip = "${SECURITY_NO_PIE_CFLAGS}"
 EOF
