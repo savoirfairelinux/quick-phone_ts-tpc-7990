@@ -14,5 +14,6 @@ IMAGE_INSTALL_append = "\
     "
 
 LICENSE = "MIT"
+IMAGE_FSTYPES = "sdcard"
 
 inherit core-image
