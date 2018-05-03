@@ -16,21 +16,17 @@ SRC_URI[sha256sum] = "2f5a1da1c174d845871c758bd80fbb580fca7799d3cfaa0d3c4e082b51
 S = "${WORKDIR}/pjproject-${PV}/"
 B = "${S}"
 
-EXTRA_OECONF += "STAGING_DIR=${STAGING_DIR_NATIVE}"
-export BUILD_SYS
-export HOST_SYS
-export STAGING_INCDIR
-export STAGING_LIBDIR
+EXTRA_OECONF = "\
+    LD='${CC}' \
+    STAGING_DIR=${STAGING_DIR_NATIVE} \
+    --disable-libwebrtc \
+    --disable-speex-aec \
+    --disable-speex-codec \
+    --enable-shared"
 
-EXTRA_OECONF="--disable-libwebrtc --disable-speex-aec --disable-speex-codec --enable-shared"
 
-do_configure_prepend() {
-	export LD="${CC}"
-}
-
-do_configure() {
-	cd ${S} && oe_runconf
-}
+# prevent bitbake from calling "make clean" before configuring the package
+CLEANBROKEN = "1"
 
 do_compile_prepend() {
 	oe_runmake dep
