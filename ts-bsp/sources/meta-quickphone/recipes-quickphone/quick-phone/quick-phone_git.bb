@@ -22,10 +22,10 @@ require recipes-qt/qt5/qt5.inc
 do_install() {
        install -d ${D}${datadir}/${P}
        install -m 0755 ${B}/quickPhone ${D}${datadir}/${P}
-       cp -a  ${S}/content ${D}${datadir}/${P}
-       cp -a  ${S}/img ${D}${datadir}/${P}
-       cp -a  ${S}/pictures ${D}${datadir}/${P}
-       cp -a  ${S}/userList.json ${D}${datadir}/${P}
+       cp -rf ${S}/content ${D}${datadir}/${P}
+       cp -rf ${S}/img ${D}${datadir}/${P}
+       cp -rf ${S}/pictures ${D}${datadir}/${P}
+       cp -rf ${S}/userList.json ${D}${datadir}/${P}
        install -m 0644 ${S}/intro_video.mp4 ${D}${datadir}/${P}
        install -m 0644 ${S}/quickPhone.qml ${D}${datadir}/${P}
        install -m 0644 ${S}/app.js ${D}${datadir}/${P}
