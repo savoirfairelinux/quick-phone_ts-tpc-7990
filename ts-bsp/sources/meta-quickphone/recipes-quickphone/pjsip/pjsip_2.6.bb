@@ -5,6 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 PR = "r0"
 
 DEPENDS = "alsa-lib util-linux python-dev"
+RDEPENDS_${PN} += "python-threading"
 
 inherit autotools pythonnative
 
