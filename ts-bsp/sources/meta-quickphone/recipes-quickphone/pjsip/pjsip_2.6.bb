@@ -1,24 +1,19 @@
-#
-# This file was derived from the 'Hello World!' example recipe in the
-# Yocto Project Development Manual.
-#
-
 DESCRIPTION = "PJSIP stack"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRC_URI[md5sum] = "c347a672679e7875ce572e18517884b2"
-SRC_URI[sha256sum] = "2f5a1da1c174d845871c758bd80fbb580fca7799d3cfaa0d3c4e082b5161c7b4"
+PR = "r0"
+
+DEPENDS = "alsa-lib util-linux python-dev"
 
 inherit autotools pythonnative
 
-PR = "r0"
+SRC_URI = "http://www.pjsip.org/release/${PV}/pjproject-${PV}.tar.bz2"
 
-SRC_URI = "http://www.pjsip.org/release/2.6/pjproject-2.6.tar.bz2"
+SRC_URI[md5sum] = "c347a672679e7875ce572e18517884b2"
+SRC_URI[sha256sum] = "2f5a1da1c174d845871c758bd80fbb580fca7799d3cfaa0d3c4e082b5161c7b4"
 
-S = "${WORKDIR}/pjproject-2.6/"
-
-DEPENDS = "alsa-lib util-linux python-dev"
+S = "${WORKDIR}/pjproject-${PV}/"
 
 EXTRA_OECONF += "STAGING_DIR=${STAGING_DIR_NATIVE}"
 export BUILD_SYS
