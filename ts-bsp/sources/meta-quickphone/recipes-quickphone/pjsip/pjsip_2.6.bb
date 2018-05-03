@@ -51,12 +51,12 @@ do_install() {
 	install -m 644 ${S}/pjsip-apps/src/python/build/lib.*/* ${D}${libdir}/${PYTHON_DIR}/site-packages
 }
 
-FILES_${PN} += "${libdir}"
-FILES_${PN} += "${libdir}/${PYTHON_DIR}"
+FILES_${PN} = "${libdir}/*.so"
+FILES_${PN}-dev = ""
+FILES_${PN}-apps = "${libdir}/${PYTHON_DIR}"
 
-INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
-INHIBIT_PACKAGE_STRIP = "1"
+RDEPENDS_${PN}-apps = "${PN}"
 
-PACKAGES = "${PN}"
+PACKAGES += "${PN}-apps"
 
 SECURITY_CFLAGS = "${SECURITY_NO_PIE_CFLAGS}"
