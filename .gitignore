@@ -6,10 +6,9 @@ ts-bsp/README
 ts-bsp/downloads/
 ts-bsp/setup-environment
 ts-bsp/sources/base/
+ts-bsp/sources/Documentation/
 ts-bsp/sources/meta-browser/
-ts-bsp/sources/meta-fsl-arm-extra/
-ts-bsp/sources/meta-fsl-arm/
-ts-bsp/sources/meta-fsl-demos/
+ts-bsp/sources/meta-freescale*/
 ts-bsp/sources/meta-mono/
 ts-bsp/sources/meta-openembedded/
 ts-bsp/sources/meta-qt5/
