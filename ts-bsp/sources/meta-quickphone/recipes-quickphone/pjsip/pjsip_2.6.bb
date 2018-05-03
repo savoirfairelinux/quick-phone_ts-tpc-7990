@@ -25,6 +25,8 @@ EXTRA_OECONF = "\
     --disable-speex-codec \
     --enable-shared"
 
+# inject linker flags as pjsip doesn't respect LDFLAGS
+TARGET_CC_ARCH += "${LDFLAGS}"
 
 # prevent bitbake from calling "make clean" before configuring the package
 CLEANBROKEN = "1"
