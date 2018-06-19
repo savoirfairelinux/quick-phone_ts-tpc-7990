@@ -1,6 +1,6 @@
 #!/bin/sh
-export QML_IMPORT_PATH=/usr/share/quick-phone-git
-export QML2_IMPORT_PATH=/usr/share/quick-phone-git
+export QML_IMPORT_PATH=/usr/share/quick-phone
+export QML2_IMPORT_PATH=/usr/share/quick-phone
 export QT_QPA_PLATFORM=eglfs
 
 # preven screen blanking
@@ -9,5 +9,5 @@ setterm -blank 0 -powersave off
 # get rid of console so it doesn't modify framebuffer
 echo 0 > /sys/class/vtconsole/vtcon1/bind
 
-cd /usr/share/quick-phone-git && ./quickPhone \$* 
+cd /usr/share/quick-phone && ./quickPhone \$*
 
