@@ -9,5 +9,5 @@ setterm -blank 0 -powersave off
 # get rid of console so it doesn't modify framebuffer
 echo 0 > /sys/class/vtconsole/vtcon1/bind
 
-cd /usr/share/quick-phone && ./quickPhone \$*
+cd /usr/share/quick-phone && ./quickPhone "$@"
 
