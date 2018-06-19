@@ -20,18 +20,18 @@ RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins alsa-ut
 require recipes-qt/qt5/qt5.inc
 
 do_install() {
-       install -d ${D}${datadir}/${P}
-       install -m 0755 ${B}/quickPhone ${D}${datadir}/${P}
-       cp -rf ${S}/content ${D}${datadir}/${P}
-       cp -rf ${S}/img ${D}${datadir}/${P}
-       cp -rf ${S}/pictures ${D}${datadir}/${P}
-       cp -rf ${S}/userList.json ${D}${datadir}/${P}
-       install -m 0644 ${S}/intro_video.mp4 ${D}${datadir}/${P}
-       install -m 0644 ${S}/quickPhone.qml ${D}${datadir}/${P}
-       install -m 0644 ${S}/app.js ${D}${datadir}/${P}
-       install -m 0644 ${S}/ringing.wav ${D}${datadir}/${P}
-       install -m 0644 ${S}/ts_7990_config.ini ${D}${datadir}/${P}
-       install -m 0755 ${S}/caller.py ${D}${datadir}/${P}
+       install -d ${D}${datadir}/${PN}
+       install -m 0755 ${B}/quickPhone ${D}${datadir}/${PN}
+       cp -rf ${S}/content ${D}${datadir}/${PN}
+       cp -rf ${S}/img ${D}${datadir}/${PN}
+       cp -rf ${S}/pictures ${D}${datadir}/${PN}
+       cp -rf ${S}/userList.json ${D}${datadir}/${PN}
+       install -m 0644 ${S}/intro_video.mp4 ${D}${datadir}/${PN}
+       install -m 0644 ${S}/quickPhone.qml ${D}${datadir}/${PN}
+       install -m 0644 ${S}/app.js ${D}${datadir}/${PN}
+       install -m 0644 ${S}/ringing.wav ${D}${datadir}/${PN}
+       install -m 0644 ${S}/ts_7990_config.ini ${D}${datadir}/${PN}
+       install -m 0755 ${S}/caller.py ${D}${datadir}/${PN}
 
        install -d ${D}${bindir}
        install -m 0755 ${WORKDIR}/quickPhone ${D}${bindir}
@@ -40,5 +40,5 @@ do_install() {
        install -m 0644 ${WORKDIR}/quickphone.service ${D}/${sysconfdir}/systemd/system/multi-user.target.wants/
 }
 
-FILES_${PN} += "${datadir}/${P}/*"
-FILES_${PN}-dbg += "${datadir}/${P}/.debug/*"
+FILES_${PN} += "${datadir}/${PN}/*"
+FILES_${PN}-dbg += "${datadir}/${PN}/.debug/*"
