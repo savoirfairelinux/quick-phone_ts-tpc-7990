@@ -57,7 +57,6 @@ EOF
 # Edit the file conf/local.conf. To match our image, add these lines:
 cat <<'EOF' >> conf/local.conf
 LICENSE_FLAGS_WHITELIST = "commercial_libav commercial"
-PACKAGECONFIG_append_pn-qtbase = " icu accessibility"
 
 # Skip these three if you do not want systemd
 DISTRO_FEATURES_append = " systemd"
