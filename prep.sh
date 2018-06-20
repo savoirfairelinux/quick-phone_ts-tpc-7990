@@ -56,6 +56,20 @@ EOF
 
 # Edit the file conf/local.conf. To match our image, add these lines:
 cat <<'EOF' >> conf/local.conf
+
+DISTRO_FEATURES_remove = "3g \\
+                          bluetooth \\
+                          bluez5 \\
+                          gobject-introspection-data \\
+                          irda \\
+                          nfc \\
+                          nfs \\
+                          pcmcia \\
+                          usbgadget \\
+                          usbhost \\
+                          wifi \\
+                          zeroconf"
+
 LICENSE_FLAGS_WHITELIST = "commercial_libav commercial"
 
 # Skip these three if you do not want systemd
