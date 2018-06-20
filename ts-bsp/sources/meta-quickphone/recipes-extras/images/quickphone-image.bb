@@ -34,6 +34,7 @@ IMAGE_INSTALL_append = " \
     libmodbus \
     linux-firmware \
     quick-phone \
+    systemd-machine-units \
     ttf-dejavu-sans-condensed \
     ttf-dejavu-serif \
     ttf-dejavu-serif-condensed \
