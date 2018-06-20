@@ -1,0 +1,6 @@
+[Unit]
+Description=User Data Directory for the Quickphone Project
+
+[Mount]
+What=/dev/mmcblk1p2
+Where=/usr/share/quick-phone/assets

@@ -1,6 +1,7 @@
 [Unit]
 Description=quickPhone Service
 After=local-fs.target
+RequiresMountsFor=/usr/share/quick-phone/assets
 
 [Service]
 Type=simple
