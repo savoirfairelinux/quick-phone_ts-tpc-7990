@@ -15,7 +15,14 @@ SRC_URI += "\
 S = "${WORKDIR}/git"
 
 DEPENDS = "qtdeclarative qtgraphicaleffects pjsip python-argparse qtmultimedia qtquick1 pjsip"
-RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins alsa-utils pjsip-apps python-argparse"
+RDEPENDS_${PN} = "alsa-utils \
+                  qtdeclarative-qmlplugins \
+                  qtgraphicaleffects-qmlplugins \
+                  qtmultimedia-qmlplugins \
+                  qtquickcontrols-qmlplugins \
+                  qtquickcontrols2-qmlplugins \
+                  pjsip-apps \
+                  python-argparse"
 
 require recipes-qt/qt5/qt5.inc
 
