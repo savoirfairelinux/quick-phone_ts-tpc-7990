@@ -24,7 +24,6 @@ IMAGE_INSTALL_tsimx6 = "\
 IMAGE_INSTALL_append = " \
     packagegroup-core-full-cmdline \
     packagegroup-fonts-truetype-core \
-    packagegroup-qt5-toolchain-target \
     alsa-utils-alsamixer \
     bash-completion \
     fbset \
