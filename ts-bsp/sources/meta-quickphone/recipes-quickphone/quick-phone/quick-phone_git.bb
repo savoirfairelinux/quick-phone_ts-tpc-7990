@@ -26,6 +26,8 @@ RDEPENDS_${PN} = "alsa-utils \
 
 require recipes-qt/qt5/qt5.inc
 
+inherit systemd
+
 do_install() {
        install -d ${D}${datadir}/${PN}
        install -m 0755 ${B}/quickPhone ${D}${datadir}/${PN}
@@ -43,9 +45,10 @@ do_install() {
        install -d ${D}${bindir}
        install -m 0755 ${WORKDIR}/quickPhone ${D}${bindir}
 
-       install -d ${D}/${sysconfdir}/systemd/system/multi-user.target.wants
-       install -m 0644 ${WORKDIR}/quickphone.service ${D}/${sysconfdir}/systemd/system/multi-user.target.wants/
+       install -d ${D}/${systemd_system_unitdir}
+       install -m 0644 ${WORKDIR}/quickphone.service ${D}/${systemd_system_unitdir}
 }
 
 FILES_${PN} += "${datadir}/${PN}/*"
 FILES_${PN}-dbg += "${datadir}/${PN}/.debug/*"
+SYSTEMD_SERVICE_${PN} = "quickphone.service"
