@@ -30,17 +30,17 @@ require recipes-qt/qt5/qt5.inc
 inherit systemd
 
 do_install() {
-       install -d ${D}${datadir}/${PN}
+       install -d ${D}${datadir}/${PN}/assets
        install -m 0755 ${B}/quickPhone ${D}${datadir}/${PN}
        cp -rf ${S}/content ${D}${datadir}/${PN}
        cp -rf ${S}/img ${D}${datadir}/${PN}
-       cp -rf ${S}/pictures ${D}${datadir}/${PN}
-       cp -rf ${S}/userList.json ${D}${datadir}/${PN}
-       install -m 0644 ${S}/intro_video.mp4 ${D}${datadir}/${PN}
+       cp -rf ${S}/assets/pictures ${D}${datadir}/${PN}/assets
+       cp -rf ${S}/assets/userList.json ${D}${datadir}/${PN}/assets
+       install -m 0644 ${S}/assets/intro_video.mp4 ${D}${datadir}/${PN}/assets
        install -m 0644 ${S}/quickPhone.qml ${D}${datadir}/${PN}
        install -m 0644 ${S}/app.js ${D}${datadir}/${PN}
        install -m 0644 ${S}/ringing.wav ${D}${datadir}/${PN}
-       install -m 0644 ${S}/ts_7990_config.ini ${D}${datadir}/${PN}
+       install -m 0644 ${S}/assets/config.ini ${D}${datadir}/${PN}/assets
        install -m 0755 ${S}/caller.py ${D}${datadir}/${PN}
 
        install -d ${D}${bindir}
