@@ -2,10 +2,11 @@ DESCRIPTION = "quick-phone application"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
 
-PR = "r0"
+PR = "r1"
 
 SRC_URI = "git://github.com/savoirfairelinux/quick-phone.git"
-SRCREV = "5247aab3fbda166cfc4c599c54c92e9006a23e66"
+SRCREV = "${AUTOREV}"
+PV = "1.0+git${SRCPV}"
 
 SRC_URI += "\
 	file://quickphone.service \
